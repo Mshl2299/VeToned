@@ -1,0 +1,55 @@
+{
+    "dayPlans": [
+        {
+            "name": "Apple Day",
+            "date": "2024-10-20",
+            "recipes": [
+                {
+                    "name": "Apple",
+                    "type": "SNACK",
+                    "diet": "VEGAN",
+                    "cookTime": 0,
+                    "ingredients": [
+                        "Apple"
+                    ],
+                    "timeOfDay": "MORNING",
+                    "starred": true
+                }
+            ],
+            "starred": false
+        },
+        {
+            "name": "Fruits Day",
+            "date": "2027-12-31",
+            "recipes": [
+                {
+                    "name": "Apple",
+                    "type": "SNACK",
+                    "diet": "VEGAN",
+                    "cookTime": 0,
+                    "ingredients": [
+                        "Apple"
+                    ],
+                    "timeOfDay": "UNSPECIFIED",
+                    "starred": false
+                },
+                {
+                    "name": "Grapes",
+                    "type": "SIDE",
+                    "diet": "VEGAN",
+                    "cookTime": 0,
+                    "ingredients": [
+                        "Grape",
+                        "Grape",
+                        "Grape",
+                        "Grape",
+                        "Grape"
+                    ],
+                    "timeOfDay": "EVENING",
+                    "starred": true
+                }
+            ],
+            "starred": true
+        }
+    ]
+}

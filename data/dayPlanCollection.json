@@ -1,0 +1,80 @@
+{"dayPlans": [
+    {
+        "date": "2024-10-24",
+        "recipes": [
+            {
+                "starred": false,
+                "name": "omelette",
+                "cookTime": 15,
+                "ingredients": [
+                    "Egg",
+                    "Egg",
+                    "Egg"
+                ],
+                "diet": "KETO_VEGETARIAN",
+                "type": "COURSE",
+                "timeOfDay": "MORNING"
+            },
+            {
+                "starred": false,
+                "name": "Apple",
+                "cookTime": 5,
+                "ingredients": [
+                    "Apple",
+                    "Apple"
+                ],
+                "diet": "VEGAN",
+                "type": "SIDE",
+                "timeOfDay": "MORNING"
+            }
+        ],
+        "starred": false,
+        "name": "Breakfast"
+    },
+    {
+        "date": "2024-10-27",
+        "recipes": [
+            {
+                "starred": false,
+                "name": "omelette",
+                "cookTime": 15,
+                "ingredients": [
+                    "Egg",
+                    "Egg",
+                    "Egg"
+                ],
+                "diet": "KETO_VEGETARIAN",
+                "type": "COURSE",
+                "timeOfDay": "EVENING"
+            },
+            {
+                "starred": false,
+                "name": "omelette",
+                "cookTime": 15,
+                "ingredients": [
+                    "Egg",
+                    "Egg",
+                    "Egg"
+                ],
+                "diet": "KETO_VEGETARIAN",
+                "type": "COURSE",
+                "timeOfDay": "EVENING"
+            },
+            {
+                "starred": false,
+                "name": "omelette",
+                "cookTime": 15,
+                "ingredients": [
+                    "Egg",
+                    "Egg",
+                    "Egg"
+                ],
+                "diet": "KETO_VEGETARIAN",
+                "type": "COURSE",
+                "timeOfDay": "EVENING"
+            }
+        ],
+        "starred": false,
+        "name": "Eggy dinner"
+    }
+]}

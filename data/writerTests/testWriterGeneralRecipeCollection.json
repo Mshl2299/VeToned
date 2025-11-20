@@ -1,0 +1,20 @@
+{"recipes": [
+    {
+        "starred": true,
+        "name": "Apple",
+        "cookTime": 0,
+        "ingredients": ["Apple"],
+        "diet": "VEGAN",
+        "type": "SNACK",
+        "timeOfDay": "MORNING"
+    },
+    {
+        "starred": false,
+        "name": "Apple",
+        "cookTime": 0,
+        "ingredients": ["Apple"],
+        "diet": "VEGAN",
+        "type": "SNACK",
+        "timeOfDay": "UNSPECIFIED"
+    }
+]}

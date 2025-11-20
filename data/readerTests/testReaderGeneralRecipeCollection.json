@@ -1,0 +1,40 @@
+{
+    "recipes": [
+        {
+            "name": "Apple",
+            "type": "SNACK",
+            "diet": "VEGAN",
+            "cookTime": 0,
+            "ingredients": [
+                "Apple"
+            ],
+            "timeOfDay": "MORNING",
+            "starred": false
+        },
+        {
+            "name": "omelette",
+            "type": "COURSE",
+            "diet": "KETO_VEGETARIAN",
+            "cookTime": 15,
+            "ingredients": [
+                "Egg",
+                "Egg",
+                "Egg"
+            ],
+            "timeOfDay": "AFTERNOON",
+            "starred": true
+        },
+        {
+            "name": "Grapes",
+            "type": "SIDE",
+            "diet": "VEGAN",
+            "cookTime": 0,
+            "ingredients": [
+                "Grape",
+                "Grape"
+            ],
+            "timeOfDay": "EVENING",
+            "starred": false
+        }
+    ]
+}

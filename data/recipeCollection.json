@@ -1,0 +1,27 @@
+{"recipes": [
+    {
+        "starred": false,
+        "name": "omelette",
+        "cookTime": 15,
+        "ingredients": [
+            "Egg",
+            "Egg",
+            "Egg"
+        ],
+        "diet": "KETO_VEGETARIAN",
+        "type": "COURSE",
+        "timeOfDay": "UNSPECIFIED"
+    },
+    {
+        "starred": false,
+        "name": "Apple",
+        "cookTime": 5,
+        "ingredients": [
+            "Apple",
+            "Apple"
+        ],
+        "diet": "VEGAN",
+        "type": "SIDE",
+        "timeOfDay": "UNSPECIFIED"
+    }
+]}
