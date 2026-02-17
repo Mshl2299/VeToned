@@ -7,8 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import model.enumerations.*;
-
 public class DayPlanTest extends RecipeCollectionTest {
     protected DayPlan testDayPlan1;
     protected DayPlan testDayPlan2;
@@ -17,9 +15,9 @@ public class DayPlanTest extends RecipeCollectionTest {
     void runBefore() {
         super.runBefore();
 
-        testRecipe1.setTimeOfDay(TimeOfDay.AFTERNOON);
-        testRecipe2.setTimeOfDay(TimeOfDay.EVENING);
-        testRecipe3.setTimeOfDay(TimeOfDay.MORNING);
+        testRecipe1.setTimeOfDay(Recipe.TimeOfDay.AFTERNOON);
+        testRecipe2.setTimeOfDay(Recipe.TimeOfDay.EVENING);
+        testRecipe3.setTimeOfDay(Recipe.TimeOfDay.MORNING);
         testDayPlan1 = new DayPlan("Fruit day", LocalDate.of(2024, 10, 20), testRecipesAll);
         testDayPlan2 = new DayPlan("Apple and Grapes", LocalDate.now(), testRecipesAppleGrape);
     }
@@ -48,7 +46,7 @@ public class DayPlanTest extends RecipeCollectionTest {
 
     @Test
     void testSortByTimeOfDayDupe() {
-        testRecipe2.setTimeOfDay(TimeOfDay.MORNING);
+        testRecipe2.setTimeOfDay(Recipe.TimeOfDay.MORNING);
         testDayPlan1.sortByTimeOfDay();
         assertEquals(testRecipe2, testDayPlan1.getRecipes().get(0));
         assertEquals(testRecipe3, testDayPlan1.getRecipes().get(1));

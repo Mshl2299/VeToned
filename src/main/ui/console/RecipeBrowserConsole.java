@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import model.*;
-import model.enumerations.*;
 
 // Represents the RecipeBrowser of the Meal Planner application
 public class RecipeBrowserConsole {
@@ -61,8 +60,8 @@ public class RecipeBrowserConsole {
     // and adds it to the list of recipes in the recipe browser
     public void createRecipe() {
         String name;
-        MealType type;
-        Diet diet;
+        Recipe.MealType type;
+        Recipe.Diet diet;
         int cookTime;
         List<String> ingredients = new ArrayList<>();
 
@@ -96,52 +95,51 @@ public class RecipeBrowserConsole {
 
     // EFFECTS: Allows user to specify a type of meal as a Course, Side dish or
     // Snack, Default to Snack
-    public MealType specifyType() {
-        System.out.println("Please specify a type of meal (default = Snack):");
+    public Recipe.MealType specifyType() {
+        System.out.println("Please specify a type of meal (default = Other):");
         System.out.println("1 - Course, 2 - Side, 3 - Snack");
         int option = MealPlannerConsole.getIntFromUser();
 
         switch (option) {
             case 1:
-                return MealType.COURSE;
+                return Recipe.MealType.COURSE;
             case 2:
-                return MealType.SIDE;
+                return Recipe.MealType.SIDE;
             case 3:
-                return MealType.SNACK;
+                return Recipe.MealType.SNACK;
             default:
-                return MealType.SNACK;
+                return Recipe.MealType.OTHER;
         }
     }
 
     // EFFECTS: Allows user to specify a diet given options: Keto, Vegan,
     // Vegetarian, Keto-Vegan, Keto-Vegetarian, Non-Vegetarian
     // Default to Non-vegetarian
-    public Diet specifyDiet() {
+    public Recipe.Diet specifyDiet() {
         System.out.println("Please specify a diet (default = Non-Vegetarian):");
         System.out.println("1- Keto, 2- Vegetarian, 3- Vegan, 4- Keto-Vegetarian, 5- Keto-Vegan, 6- Non-Vegetarian");
         int option = MealPlannerConsole.getIntFromUser();
 
         switch (option) {
             case 1:
-                return Diet.KETO;
+                return Recipe.Diet.KETO;
             case 2:
-                return Diet.VEGETARIAN;
+                return Recipe.Diet.VEGETARIAN;
             case 3:
-                return Diet.VEGAN;
+                return Recipe.Diet.VEGAN;
             case 4:
-                return Diet.KETO_VEGETARIAN;
+                return Recipe.Diet.KETO_VEGETARIAN;
             case 5:
-                return Diet.KETO_VEGAN;
+                return Recipe.Diet.KETO_VEGAN;
             case 6:
-                return Diet.NON_VEGETARIAN;
+                return Recipe.Diet.NON_VEGETARIAN;
             default:
-                return Diet.NON_VEGETARIAN;
+                return Recipe.Diet.NON_VEGETARIAN;
         }
     }
 
     // EFFECTS: Allows user to add an unspecified number of ingredients
     // to a list of ingredients and returns the list
-    // Allow numbers
     public List<String> specifyIngredients() {
         System.out.println("Please specify the ingredients (Enter names, or type quit):");
         List<String> ingredients = new ArrayList<>();

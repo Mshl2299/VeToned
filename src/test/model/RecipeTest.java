@@ -7,8 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import model.enumerations.*;
-
 public class RecipeTest {
 
     protected List<String> testIngredients1;
@@ -34,31 +32,31 @@ public class RecipeTest {
         testIngredients3.add("Grape");
         testIngredients3.add("Grape");
 
-        testRecipe1 = new Recipe("Apple", MealType.SNACK, Diet.VEGAN, 0, testIngredients1);
-        testRecipe2 = new Recipe("Apple Pie", MealType.SNACK, Diet.VEGAN, 60, testIngredients2);
-        testRecipe3 = new Recipe("Grapes", MealType.SNACK, Diet.VEGAN, 0, testIngredients3);
+        testRecipe1 = new Recipe("Apple", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, 0, testIngredients1);
+        testRecipe2 = new Recipe("Apple Pie", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, 60, testIngredients2);
+        testRecipe3 = new Recipe("Grapes", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, 0, testIngredients3);
         testRecipe1clone = new Recipe(testRecipe1);
     }
 
     @Test
     void testConstructor() {
         assertEquals("Apple", testRecipe1.getName());
-        assertEquals(MealType.SNACK, testRecipe1.getType());
-        assertEquals(Diet.VEGAN, testRecipe1.getDiet());
+        assertEquals(Recipe.MealType.SNACK, testRecipe1.getType());
+        assertEquals(Recipe.Diet.VEGAN, testRecipe1.getDiet());
         assertEquals(0, testRecipe1.getCookTime());
         assertEquals(testIngredients1, testRecipe1.getIngredients());
-        assertEquals(TimeOfDay.UNSPECIFIED, testRecipe1.getTimeOfDay());
+        assertEquals(Recipe.TimeOfDay.UNSPECIFIED, testRecipe1.getTimeOfDay());
         assertFalse(testRecipe1.getStarred());
     }
 
     @Test
     void testCloneConstructor() {
         assertEquals("Apple", testRecipe1clone.getName());
-        assertEquals(MealType.SNACK, testRecipe1clone.getType());
-        assertEquals(Diet.VEGAN, testRecipe1clone.getDiet());
+        assertEquals(Recipe.MealType.SNACK, testRecipe1clone.getType());
+        assertEquals(Recipe.Diet.VEGAN, testRecipe1clone.getDiet());
         assertEquals(0, testRecipe1clone.getCookTime());
         assertEquals(testIngredients1, testRecipe1clone.getIngredients());
-        assertEquals(TimeOfDay.UNSPECIFIED, testRecipe1clone.getTimeOfDay());
+        assertEquals(Recipe.TimeOfDay.UNSPECIFIED, testRecipe1clone.getTimeOfDay());
         assertFalse(testRecipe1clone.getStarred());
     }
 
@@ -77,41 +75,41 @@ public class RecipeTest {
 
     @Test
     void testSetType() {
-        testRecipe1.setType(MealType.SIDE);
-        assertEquals(MealType.SIDE, testRecipe1.getType());
+        testRecipe1.setType(Recipe.MealType.SIDE);
+        assertEquals(Recipe.MealType.SIDE, testRecipe1.getType());
     }
 
     @Test
     void testSetTypeMultiple() {
-        testRecipe1.setType(MealType.COURSE);
-        testRecipe1.setType(MealType.SIDE);
-        assertEquals(MealType.SIDE, testRecipe1.getType());
+        testRecipe1.setType(Recipe.MealType.COURSE);
+        testRecipe1.setType(Recipe.MealType.SIDE);
+        assertEquals(Recipe.MealType.SIDE, testRecipe1.getType());
     }
 
     @Test
     void testSetDiet() {
-        testRecipe1.setDiet(Diet.VEGETARIAN);
-        assertEquals(Diet.VEGETARIAN, testRecipe1.getDiet());
+        testRecipe1.setDiet(Recipe.Diet.VEGETARIAN);
+        assertEquals(Recipe.Diet.VEGETARIAN, testRecipe1.getDiet());
     }
 
     @Test
     void testSetDietMultiple() {
-        testRecipe1.setDiet(Diet.VEGETARIAN);
-        testRecipe1.setDiet(Diet.KETO_VEGAN);
-        assertEquals(Diet.KETO_VEGAN, testRecipe1.getDiet());
+        testRecipe1.setDiet(Recipe.Diet.VEGETARIAN);
+        testRecipe1.setDiet(Recipe.Diet.KETO_VEGAN);
+        assertEquals(Recipe.Diet.KETO_VEGAN, testRecipe1.getDiet());
     }
 
     @Test
     void testSetTimeOfDay() {
-        testRecipe1.setTimeOfDay(TimeOfDay.MORNING);
-        assertEquals(TimeOfDay.MORNING, testRecipe1.getTimeOfDay());
+        testRecipe1.setTimeOfDay(Recipe.TimeOfDay.MORNING);
+        assertEquals(Recipe.TimeOfDay.MORNING, testRecipe1.getTimeOfDay());
     }
 
     @Test
     void testSetTimeOfDayMultiple() {
-        testRecipe1.setTimeOfDay(TimeOfDay.MORNING);
-        testRecipe1.setTimeOfDay(TimeOfDay.MORNING);
-        assertEquals(TimeOfDay.MORNING, testRecipe1.getTimeOfDay());
+        testRecipe1.setTimeOfDay(Recipe.TimeOfDay.MORNING);
+        testRecipe1.setTimeOfDay(Recipe.TimeOfDay.MORNING);
+        assertEquals(Recipe.TimeOfDay.MORNING, testRecipe1.getTimeOfDay());
     }
 
     @Test

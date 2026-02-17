@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import model.*;
-import model.enumerations.*;
 
 class JsonWriterTest extends JsonTest {
 
@@ -78,10 +77,10 @@ class JsonWriterTest extends JsonTest {
             List<String> appleIngredients = new ArrayList<>();
             appleIngredients.add("Apple");
 
-            Recipe testRecipeAppleMorningTrue = new Recipe("Apple", MealType.SNACK, Diet.VEGAN, 0, appleIngredients);
-            testRecipeAppleMorningTrue.setTimeOfDay(TimeOfDay.MORNING);
+            Recipe testRecipeAppleMorningTrue = new Recipe("Apple", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, 0, appleIngredients);
+            testRecipeAppleMorningTrue.setTimeOfDay(Recipe.TimeOfDay.MORNING);
             testRecipeAppleMorningTrue.setStarred(true);
-            Recipe testRecipeAppleUnspecFalse = new Recipe("Apple", MealType.SNACK, Diet.VEGAN, 0, appleIngredients);
+            Recipe testRecipeAppleUnspecFalse = new Recipe("Apple", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, 0, appleIngredients);
 
             rc.addRecipe(testRecipeAppleMorningTrue);
             rc.addRecipe(testRecipeAppleUnspecFalse);
@@ -95,9 +94,9 @@ class JsonWriterTest extends JsonTest {
             rc = reader.readRC();
             List<Recipe> recipes = rc.getRecipes();
             assertEquals(2, recipes.size());
-            checkRecipe("Apple", MealType.SNACK, Diet.VEGAN, TimeOfDay.MORNING, 0, appleIngredients, true,
+            checkRecipe("Apple", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, Recipe.TimeOfDay.MORNING, 0, appleIngredients, true,
                     recipes.get(0));
-            checkRecipe("Apple", MealType.SNACK, Diet.VEGAN, TimeOfDay.UNSPECIFIED, 0, appleIngredients,
+            checkRecipe("Apple", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, Recipe.TimeOfDay.UNSPECIFIED, 0, appleIngredients,
                     false, recipes.get(1));
 
         } catch (IOException e) {
@@ -122,12 +121,12 @@ class JsonWriterTest extends JsonTest {
             grapeIngredients.add("Grape");
 
             // Recipes
-            Recipe testRecipeAppleMorningTrue = new Recipe("Apple", MealType.SNACK, Diet.VEGAN, 0, appleIngredients);
-            testRecipeAppleMorningTrue.setTimeOfDay(TimeOfDay.MORNING);
+            Recipe testRecipeAppleMorningTrue = new Recipe("Apple", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, 0, appleIngredients);
+            testRecipeAppleMorningTrue.setTimeOfDay(Recipe.TimeOfDay.MORNING);
             testRecipeAppleMorningTrue.setStarred(true);
-            Recipe testRecipeAppleUnspecFalse = new Recipe("Apple", MealType.SNACK, Diet.VEGAN, 0, appleIngredients);
-            Recipe testRecipeGrapesEveningTrue = new Recipe("Grapes", MealType.SIDE, Diet.VEGAN, 0, grapeIngredients);
-            testRecipeGrapesEveningTrue.setTimeOfDay(TimeOfDay.EVENING);
+            Recipe testRecipeAppleUnspecFalse = new Recipe("Apple", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, 0, appleIngredients);
+            Recipe testRecipeGrapesEveningTrue = new Recipe("Grapes", Recipe.MealType.SIDE, Recipe.Diet.VEGAN, 0, grapeIngredients);
+            testRecipeGrapesEveningTrue.setTimeOfDay(Recipe.TimeOfDay.EVENING);
             testRecipeGrapesEveningTrue.setStarred(true);
 
             // Lists of recipes

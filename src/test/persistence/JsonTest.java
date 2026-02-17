@@ -6,11 +6,10 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import model.*;
-import model.enumerations.*;
 
 public class JsonTest {
     // EFFECTS: Checks that a recipe has the given values for fields
-    protected void checkRecipe(String name, MealType type, Diet diet, TimeOfDay tod, int cookTime,
+    protected void checkRecipe(String name, Recipe.MealType type, Recipe.Diet diet, Recipe.TimeOfDay tod, int cookTime,
             List<String> ingredients, boolean starred, Recipe recipe) {
         assertEquals(name, recipe.getName());
         assertEquals(type, recipe.getType());

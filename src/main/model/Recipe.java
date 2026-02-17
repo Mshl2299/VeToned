@@ -4,13 +4,22 @@ import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import model.enumerations.*;
 import persistence.Writable;
 
 // Represents a recipe for a meal with a name, meal type, diet type,
 // time of day to be eaten, estimated cook time, list of ingredients,
 // and if it is starred
 public class Recipe implements Writable {
+    public enum Diet {
+        KETO_VEGAN, KETO_VEGETARIAN, KETO, VEGAN, VEGETARIAN, NON_VEGETARIAN,
+    }
+    public enum MealType {
+        COURSE, SIDE, SNACK, OTHER
+    }
+    public enum TimeOfDay {
+        MORNING, LATE_MORNING, AFTERNOON, LATE_AFTERNOON, EVENING, LATE_EVENING, UNSPECIFIED
+    }
+
     private String name;
     private MealType type;
     private Diet diet;

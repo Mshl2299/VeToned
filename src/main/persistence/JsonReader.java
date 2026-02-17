@@ -11,7 +11,6 @@ import java.time.LocalDate;
 
 import org.json.*;
 import model.*;
-import model.enumerations.*;
 
 // Represents a reader that reads the JSON representation of a MealPlanner from file
 // with a MealPlanner consisting of both a RecipeCollection and DayPlanCollection
@@ -80,11 +79,11 @@ public class JsonReader {
     // EFFECTS: parses single recipe from JSON and returns the recipe
     private Recipe parseRecipe(JSONObject json) {
         String name = json.getString("name");
-        MealType type = MealType.valueOf(json.getString("type"));
-        Diet diet = Diet.valueOf(json.getString("diet"));
+        Recipe.MealType type = Recipe.MealType.valueOf(json.getString("type"));
+        Recipe.Diet diet = Recipe.Diet.valueOf(json.getString("diet"));
         int cookTime = json.getInt("cookTime");
         List<String> ingredients = getIngredients(json.getJSONArray("ingredients"));
-        TimeOfDay timeOfDay = TimeOfDay.valueOf(json.getString("timeOfDay"));
+        Recipe.TimeOfDay timeOfDay = Recipe.TimeOfDay.valueOf(json.getString("timeOfDay"));
         boolean starred = json.getBoolean("starred");
 
         Recipe recipe = new Recipe(name, type, diet, cookTime, ingredients);

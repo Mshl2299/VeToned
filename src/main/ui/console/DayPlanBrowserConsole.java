@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import model.*;
-import model.enumerations.TimeOfDay;
 import model.exceptions.MissingRecipeException;
 
 // Represents the DayPlanBrowser of the Meal Planner application
@@ -148,16 +147,16 @@ public class DayPlanBrowserConsole {
         int option = MealPlannerConsole.getIntFromUser();
         switch (option) {
             case 0:
-                r.setTimeOfDay(TimeOfDay.MORNING);
+                r.setTimeOfDay(Recipe.TimeOfDay.MORNING);
                 break;
             case 1:
-                r.setTimeOfDay(TimeOfDay.AFTERNOON);
+                r.setTimeOfDay(Recipe.TimeOfDay.AFTERNOON);
                 break;
             case 2:
-                r.setTimeOfDay(TimeOfDay.EVENING);
+                r.setTimeOfDay(Recipe.TimeOfDay.EVENING);
                 break;
             case 3:
-                r.setTimeOfDay(TimeOfDay.UNSPECIFIED);
+                r.setTimeOfDay(Recipe.TimeOfDay.UNSPECIFIED);
                 break;
             default:
                 break;
@@ -167,15 +166,15 @@ public class DayPlanBrowserConsole {
     // EFFECTS: Returns recipes by time of day given list of recipes
     private static void printRecipesByTOD(List<Recipe> recipes) {
         System.out.println("Recipes: ");
-        System.out.println("Morning: " + recipesToLOS(filterByTOD(recipes, TimeOfDay.MORNING)));
-        System.out.println("Afternoon: " + recipesToLOS(filterByTOD(recipes, TimeOfDay.AFTERNOON)));
-        System.out.println("Evening: " + recipesToLOS(filterByTOD(recipes, TimeOfDay.EVENING)));
-        System.out.println("Unspecified: " + recipesToLOS(filterByTOD(recipes, TimeOfDay.UNSPECIFIED)));
+        System.out.println("Morning: " + recipesToLOS(filterByTOD(recipes, Recipe.TimeOfDay.MORNING)));
+        System.out.println("Afternoon: " + recipesToLOS(filterByTOD(recipes, Recipe.TimeOfDay.AFTERNOON)));
+        System.out.println("Evening: " + recipesToLOS(filterByTOD(recipes, Recipe.TimeOfDay.EVENING)));
+        System.out.println("Unspecified: " + recipesToLOS(filterByTOD(recipes, Recipe.TimeOfDay.UNSPECIFIED)));
     }
 
     // EFFECTS: Returns the sub-recipes that are a given time of day given list of
     // recipes
-    private static List<Recipe> filterByTOD(List<Recipe> recipes, TimeOfDay tod) {
+    private static List<Recipe> filterByTOD(List<Recipe> recipes, Recipe.TimeOfDay tod) {
         List<Recipe> filteredRecipes = new ArrayList<>();
         for (Recipe r : recipes) {
             if (r.getTimeOfDay().equals(tod)) {

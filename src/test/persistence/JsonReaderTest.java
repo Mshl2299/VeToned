@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import model.*;
-import model.enumerations.*;
 
 public class JsonReaderTest extends JsonTest {
 
@@ -72,9 +71,9 @@ public class JsonReaderTest extends JsonTest {
 
             assertEquals(3, recipes.size());
 
-            checkRecipe("Apple", MealType.SNACK, Diet.VEGAN, TimeOfDay.MORNING, 0, appleIngredients, false,
+            checkRecipe("Apple", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, Recipe.TimeOfDay.MORNING, 0, appleIngredients, false,
                     recipes.get(0));
-            checkRecipe("omelette", MealType.COURSE, Diet.KETO_VEGETARIAN, TimeOfDay.AFTERNOON, 15, omeletteIngredients,
+            checkRecipe("omelette", Recipe.MealType.COURSE, Recipe.Diet.KETO_VEGETARIAN, Recipe.TimeOfDay.AFTERNOON, 15, omeletteIngredients,
                     true, recipes.get(1));
         } catch (IOException e) {
             fail("Couldn't read from file - IOException caught ");
@@ -98,13 +97,13 @@ public class JsonReaderTest extends JsonTest {
             grapeIngredients.add("Grape");
             grapeIngredients.add("Grape");
 
-            Recipe testRecipeAppleMorningTrue = new Recipe("Apple", MealType.SNACK, Diet.VEGAN, 0, appleIngredients);
-            testRecipeAppleMorningTrue.setTimeOfDay(TimeOfDay.MORNING);
+            Recipe testRecipeAppleMorningTrue = new Recipe("Apple", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, 0, appleIngredients);
+            testRecipeAppleMorningTrue.setTimeOfDay(Recipe.TimeOfDay.MORNING);
             testRecipeAppleMorningTrue.setStarred(true);
 
-            Recipe testRecipeAppleUnspecFalse = new Recipe("Apple", MealType.SNACK, Diet.VEGAN, 0, appleIngredients);
-            Recipe testRecipeGrapesEveningTrue = new Recipe("Grapes", MealType.SIDE, Diet.VEGAN, 0, grapeIngredients);
-            testRecipeGrapesEveningTrue.setTimeOfDay(TimeOfDay.EVENING);
+            Recipe testRecipeAppleUnspecFalse = new Recipe("Apple", Recipe.MealType.SNACK, Recipe.Diet.VEGAN, 0, appleIngredients);
+            Recipe testRecipeGrapesEveningTrue = new Recipe("Grapes", Recipe.MealType.SIDE, Recipe.Diet.VEGAN, 0, grapeIngredients);
+            testRecipeGrapesEveningTrue.setTimeOfDay(Recipe.TimeOfDay.EVENING);
             testRecipeGrapesEveningTrue.setStarred(true);
 
             List<Recipe> testRecipesAppleDay = new ArrayList<>();

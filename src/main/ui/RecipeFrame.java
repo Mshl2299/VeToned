@@ -1,7 +1,6 @@
 package ui;
 
 import model.Recipe;
-import model.enumerations.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,9 +17,9 @@ public class RecipeFrame extends JFrame implements ActionListener {
     private JLabel name;
     private JTextField nameText;
     private JLabel type;
-    private JComboBox<MealType> typeCB;
+    private JComboBox<Recipe.MealType> typeCB;
     private JLabel diet;
-    private JComboBox<Diet> dietCB;
+    private JComboBox<Recipe.Diet> dietCB;
     private JLabel cookTime;
     private JSpinner cookTimeSpinner;
     private JLabel ingredients;
@@ -79,7 +78,7 @@ public class RecipeFrame extends JFrame implements ActionListener {
         type.setSize(100, 20);
         type.setLocation(30, 60);
 
-        typeCB = new JComboBox<>(MealType.values());
+        typeCB = new JComboBox<>(Recipe.MealType.values());
         typeCB.setSize(130, 20);
         typeCB.setLocation(130, 60);
 
@@ -94,7 +93,7 @@ public class RecipeFrame extends JFrame implements ActionListener {
         diet.setSize(100, 20);
         diet.setLocation(30, 90);
 
-        dietCB = new JComboBox<>(Diet.values());
+        dietCB = new JComboBox<>(Recipe.Diet.values());
         dietCB.setSize(130, 20);
         dietCB.setLocation(130, 90);
 
@@ -179,8 +178,8 @@ public class RecipeFrame extends JFrame implements ActionListener {
         if (e.getSource() == create) {
             String name = nameText.getText();
             if (!name.equals("")) {
-                MealType type = (MealType) typeCB.getSelectedItem();
-                Diet diet = (Diet) dietCB.getSelectedItem();
+                Recipe.MealType type = (Recipe.MealType) typeCB.getSelectedItem();
+                Recipe.Diet diet = (Recipe.Diet) dietCB.getSelectedItem();
                 int ct = (int) cookTimeSpinner.getValue();
                 List<String> ing = Arrays.asList(ingredientsText.getText().split("\\s*,\\s*"));
 
