@@ -24,6 +24,9 @@ In addition, who wants to waste money on junk food and throw out leftovers that 
 
 Therefore, a meal planner suited to *Asian keto vegetarian diets*, or Asian vegetarian diets would save us the hassle, headache, and hunger by allowing us to plan our meals and cook worry-free!
 
+> **Aside: Asian cuisine** (warning: may make you hungry) \
+> Typically, Asian cuisine consists of Rice or Noodles paired with many side or main dishes. This creates complications with planning meals and tracking macronutrients. An example of a family meal: White Rice (side), Mapo Tofu (麻婆豆腐; side), Stir-Fried Rice Noodles (炒米粉; course), Bok Choy (side), Picked Radish (side), Braised Eggs/Soy Marinated Egg (卤蛋; side).
+
 ## Running the Project
 You can download and run VeToned.jar to start the project.
 
@@ -93,7 +96,7 @@ Saved recipe collection to file.
 Future improvements to refactor the project and improve design include:
 - Update console-based files to better use enums instead of a switch on numbers
 - Abstracting some kind of Collection abstract class for RecipeCollection and DayPlanCollection, as they share very similar fields and methods. This would improve the design by reducing redundancy, as well as making it easier to add future collections, such as a WeeklyPlanCollection or Month that could contain multiple WeeklyPlans. Or, if I knew how, I could use Java's built-in Iterable interface or Collections class to reduce the redundancy of these collections.
-- Abstracting an Item abstract class for Recipe and DayPlan that has a name and can be starred. This would also improve design by reducing redundancy, as both share those fields and the corresponding methods related to those fields (ie. getName(), getStarred(), setName(), setStarred())
+- Abstracting an Item abstract class for Recipe and DayPlan that has a name and can be starred. This would also improve design by reducing redundancy, as both share those fields and the corresponding methods related to those fields (i.e. getName(), getStarred(), setName(), setStarred())
 - Introducing a RecipeCollectionSorter class that handles all the sorting of the RecipeCollection class (as I may add more comparators for sorting recipes). This improves cohesion by following the Single Responsibility Principle, allowing the RecipeCollection to represent a RecipeCollection and nothing more. Similarly, I could introduce a DayPlanCollectionSorter class that handles all the sorting of the DayPlanCollection class and extract the sorting methods out of the DayPlanCollection to improve cohesion.
 - Extracting the save and load functionality out of the MealPlanner class. Once again, following the Single Responsibility Principle, I could introduce new UI classes to represent the saving and loading tabs of my MealPlanner application to improve cohesion and make it easier to understand my program just from the UML diagram.
 - TRADEOFF: Combining the reader/writer for RecipeCollection and DayPlanCollection into a single reader/writer in the MealPlanner class, to store the entire state of the program into one file, rather than two. Currently, there are lots of arrows from the ui package to the persistence package; from the MealPlanner class to the JsonReader/JsonWriter class, which makes the diagram look messy. Having a single reader and writer for both RecipeCollection and DayPlanCollection could reduce coupling and simplify the UML diagram. However, it may make it harder to read and debug the saving and loading code, as the files will be saved in the same location. It is a tradeoff of reducing coupling but reducing cohesion.
